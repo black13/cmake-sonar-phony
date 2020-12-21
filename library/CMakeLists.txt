@@ -8,8 +8,8 @@ set(CMAKE_AUTOUIC ON)
 
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
-find_package(Qt5 COMPONENTS Core network REQUIRED)
-
+find_package(Qt5 COMPONENTS Core REQUIRED)
+find_package(Qt5 COMPONENTS Network REQUIRED)
 include_directories( ../include)
 set(SOURCE_FILES logger.cpp 
 masterHandshake.cpp	
@@ -21,4 +21,4 @@ sonarConnection.cpp
 sonarMsg.cpp)
 
 add_library(sonar STATIC ${SOURCE_FILES})
-target_link_libraries(sonar Qt5::Core Qt5:Network)
+target_link_libraries(sonar Qt5::Core Qt5::Network)
